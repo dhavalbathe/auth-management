@@ -16,7 +16,7 @@ public class AuthServiceImpl implements AuthService{
     private final UserRepository userRepository;
 
     public UserResponseDTO register(UserRegisterDTO registerUser) {
-        Boolean userExists = userRepository.findByEmail(registerUser.getEmail());
+        Boolean userExists = userRepository.existsByEmail(registerUser.getEmail());
 
         if(userExists) throw new EntityExistsException("User with this email already exists");
 
@@ -31,7 +31,7 @@ public class AuthServiceImpl implements AuthService{
         return UserResponseDTO.builder()
                 .name(savedUser.getName())
                 .email(savedUser.getEmail())
-                .role(savedUser.getEmail())
+                .role(savedUser.getRole())
                 .build();
     }
 }
