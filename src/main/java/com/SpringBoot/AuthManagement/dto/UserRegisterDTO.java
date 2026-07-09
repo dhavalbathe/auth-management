@@ -12,6 +12,7 @@ public class UserRegisterDTO {
     private String name;
 
     @Email
+    private String email;
 
     private String password;
 }
