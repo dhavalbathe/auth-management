@@ -1,7 +1,5 @@
 package com.SpringBoot.AuthManagement.dto;
 
-import com.SpringBoot.AuthManagement.entity.Role;
-import jakarta.validation.constraints.Email;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -11,13 +9,8 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-public class UserRegisterDTO {
+public class UserResponseDTO {
     private String name;
-
-    @Email
     private String email;
-
-    private Role role;
-
-    private String password;
+    private String role;
 }
