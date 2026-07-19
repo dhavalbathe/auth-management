@@ -1,10 +1,12 @@
 package com.SpringBoot.AuthManagement.security;
 
 import com.SpringBoot.AuthManagement.entity.User;
+import com.SpringBoot.AuthManagement.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +15,6 @@ import java.util.List;
 public class CustomUserDetails implements UserDetails {
 
     private final User user;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(
@@ -32,4 +33,5 @@ public class CustomUserDetails implements UserDetails {
     public String getUsername() {
         return user.getEmail();
     }
+
 }
