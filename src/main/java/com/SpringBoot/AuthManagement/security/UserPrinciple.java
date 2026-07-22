@@ -1,18 +1,16 @@
 package com.SpringBoot.AuthManagement.security;
 
 import com.SpringBoot.AuthManagement.entity.User;
-import com.SpringBoot.AuthManagement.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Collection;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class CustomUserDetails implements UserDetails {
+public class UserPrinciple implements UserDetails {
 
     private final User user;
     @Override
